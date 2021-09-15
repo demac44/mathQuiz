@@ -1,0 +1,536 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+body{
+    background: linear-gradient(#1f1f1f,black);
+    background-image: url('./img/background.jpg');
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50%;
+    margin-top: 100px;
+    transform: translate(-50%);
+    width: 70%;
+    height: 600px;
+    padding: 5px;
+    background:linear-gradient(#1f1f1f,black);
+    border: 1px solid bisque;
+    border-radius: 5px;
+}
+
+/* BODOVI ----------------------------------------------------*/
+.points{
+    width: 20%;
+    height: 100%;
+    display: none;
+}
+.points li{
+    position: relative;
+    text-align: center;
+    padding-top: 10px;
+    border: 1px solid bisque;
+    border-bottom: 1px solid #1f1f1f;
+    border-radius: 5px;
+    list-style: none;
+    height: 6.66666666%;
+    color: #1f1f1f;
+    font-size: 20px;
+    font-weight: bold;
+    background: linear-gradient(lightblue,gray);
+
+}
+.point_color{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #0A8800 ;
+    opacity: 0.5;
+    border-radius: 5px;
+}
+
+/* JOKERI I VRIJEME -----------------------------------------------------*/
+.main{
+    position: relative;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.question_container{
+    position: relative;
+    width: 90%;
+}
+.counter{
+    position: absolute;
+    top: -25%;
+    left: 50%;
+    transform: translate(-50%);
+    width: 110px;
+    height: 100px;
+    text-align: center;
+    padding-top: 15px;
+    border-radius: 50%;
+    border: 2px solid #1f1f1f;
+    font-size: 30px;
+    color: #1f1f1f;
+    background: linear-gradient(lightblue,gray);
+    display: none;
+}
+.jokers{
+    width: 100%;
+    height: 90px;
+    /* display: flex; */
+    justify-content: space-between;
+    padding: 30px;
+    border: 2px solid bisque;
+    border-radius: 10px;
+    background: linear-gradient(lightblue,gray);
+    display: none;
+}
+.joker{
+    width: 100px;
+    height: 30px;
+    border: 2px solid bisque;
+    color: bisque;
+    background-color: #1f1f1f;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.joker:hover{
+    background-color: #2d2d2d;
+}
+/* JOKER PUBLIKA ----------------------------------------------------*/
+.jokerA_box{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 40%;
+    height: 400px;
+    background: linear-gradient(lightblue,gray);
+    color: #1f1f1f;
+    border: 5px solid #1f1f1f;
+    z-index: 2;
+    transform: translate(-50%,-50%);
+    font-size: 25px;
+    font-weight: bold;
+    padding: 15px;
+    line-height: 50px;
+    display: none;
+}
+#v1,#v2,#v3,#v4{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+}
+#close_joker{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border: 2px solid #1f1f1f;
+    background-color: #D2231A;
+    cursor: pointer;
+    color: bisque;
+}
+.jokerA_box div{
+    display: flex;
+    align-items: center;
+}
+#load1{
+    background-color: #D2231A;
+    height: 20px;
+    margin-left: 20px;
+    animation-name: load;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+#load2{
+    background-color: green;
+    height: 20px;
+    margin-left: 20px;
+    animation-name: load;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+#load3{
+    background-color: blue;
+    height: 20px;
+    margin-left: 20px;
+    animation-name: load;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+#load4{
+    background-color: yellow;
+    height: 20px;
+    margin-left: 20px;
+    animation-name: load;
+    animation-duration: 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+@keyframes load{
+    0%{width: 0px;}
+}
+
+/* PITANJA I ODGOVORI------------------------------------------------ */
+.question{
+    width: 100%;
+    height: 110px;
+    margin-top: 15px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid bisque;
+    border-radius: 10px;
+    font-size: 25px;
+    color: #1f1f1f;
+    background: linear-gradient(lightblue,gray);
+
+}
+.answers{
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+    width: 90%;
+    padding: 10px;
+    margin-top: 30px;
+    background: linear-gradient(lightblue,gray);
+    border: 2px solid bisque;
+    border-radius: 10px;
+    display: none;
+}
+.answer{
+    display: flex;
+    padding: 5px;
+    border: 2px solid bisque;
+    border-radius: 5px;
+    text-align: center;
+    color: bisque;
+    padding-top: 10px;
+    padding-left: 10px;
+    font-size: 20px;
+    cursor: pointer;;
+    background-color: #131313;
+}
+.answer:hover{
+    background-color: #2d2d2d;
+}
+#aa1,#aa2,#aa3,#aa4{
+    margin-left: 10px;
+}
+
+/* KRAJ IGRE ----------------------------------------------------------*/
+.endGame{
+    position: absolute;
+    top: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background:linear-gradient(#1f1f1f,black);
+    background-image: url("./img/background.jpg");
+    z-index: 3;
+    display: none;
+
+}
+#congrats{
+    color: ivory;
+    margin-bottom: 100px;
+    text-align: center;
+    background: linear-gradient(lightblue,gray);
+    width: 55%;
+    height: 100px;
+    color: #1f1f1f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid bisque;
+    border-radius: 10px;
+    padding: 5px;
+}
+#mainMenu_btn,#newGame_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    color: #1f1f1f;
+    font-size: 25px;
+    font-weight: bold;
+    border: 2px solid bisque;
+    border-radius: 10px;
+    margin-bottom: 50px;
+    background: linear-gradient(lightblue,gray);
+}
+
+/* POČETAK IGRE -----------------------------------------------------------*/
+#name_input{
+    width: 100%;
+    height: 50px;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 25px;
+    border: 2px solid #1f1f1f;
+    border-radius: 5px;
+    background-color: #232323;
+    border: 2px solid bisque;
+    color: beige;
+}
+#start{
+    text-align: center;
+    width: 200px;
+    height: 60px;
+    border: 2px solid bisque;
+    border-radius: 5px;
+    cursor: pointer;
+    color: black;
+    font-size: 3em;
+    margin-top: 30px;
+    margin-bottom: -60px;
+    background: linear-gradient(lightblue,gray);
+
+}
+/* IZLAZAK IZ IGRE --------------------------------------------------------------*/
+#quitGame{
+    width: 150px;
+    height: 30px;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    margin-top: 80px;
+    margin-bottom: -100px;
+    border: 2px solid bisque;
+    border-radius: 5px;
+    color: bisque;
+    font-weight: bold;
+    background-color: #D2231A;
+    cursor: pointer;
+}
+
+/* POČETNA STRANICA -----------------------------------------------------------------*/
+
+.landing_page{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+.landing_page div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 70px;
+    border: 2px solid beige;
+    border-radius: 10px;
+    font-size: 40px;
+    color: #1f1f1f;
+    background: linear-gradient(lightblue,gray);
+}
+.landing_page div:hover{
+    background-color: #1f1f1f;
+}
+.landing_page a{
+    margin-top: 50px;
+}
+
+/* INFORMACIJE O PROJEKTU----------------------------------------------- */
+
+.infoContainer{
+    display: flex;
+    flex-direction: column;
+    margin-left: 50%;
+    margin-top: 100px;
+    transform: translate(-50%);
+    width: 40%;
+    padding: 20px;
+    background:linear-gradient(#1f1f1f,black);
+    color:bisque;
+    border: 2px solid bisque;
+    border-radius: 5px;
+}
+.infoContainer ul{
+    margin-top: 50px;
+    margin-left: 50px;
+}
+.infoContainer ul li ul{
+    margin-top: 10px;
+    margin-left: 25px;
+    line-height: 30px;
+}
+.infoContainer button{
+    width: 100%;
+    height: 30px;
+    color:bisque;
+    background-color: transparent;
+    border: 2px solid bisque;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.infoContainer a{
+    width: 120px;
+    height: 30px;
+    margin-left: 50%;
+    margin-top: 50px;
+    transform: translate(-50%);
+}
+#mainMenu{
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(lightblue,gray);
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    border: 2px solid bisque;
+    border-radius: 5px;
+    cursor: pointer; 
+}
+.container a{
+    width: 150px;
+    height: 35px;
+    margin-top: 100px;
+    margin-bottom: -50px;
+}
+
+.infoContainer button:hover{
+    background-color: #1f1f1f;
+}
+
+/* PRAVILA IGRE */
+
+.infoContainer p {
+    font-size: 18px;
+    margin-top: 30px;
+    line-height: 25px;
+}
+
+#qc{
+    display: none;
+    margin-left: 5%;
+    width: 150px;
+    margin-bottom: 15px;
+    padding: 3px;
+    align-self: start;
+    border: 2px solid black;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    background-color:#d8d101;
+    color: black;
+}
+
+
+
+/* RESPONSIVE */
+
+@media screen and (max-width:991px){
+    .container{
+        width: 90%;
+        margin-top: 70px;
+    }
+    .jokerA_box{
+        width: 50%;
+    }
+    .answer:hover{
+        background-color: #131313;
+    }
+    .infoContainer{
+        width: 70%;
+    }
+    #congrats{
+        width: 70%;
+    }
+
+}
+@media screen and (max-width:600px){
+    .counter{
+        width: 80px;
+        height: 80px;
+        font-size: 20px;
+        padding-top: 15px;
+        margin-top: 20px;
+    }
+    .jokers{
+        padding: 15px;
+        padding-top: 40px;
+    }
+    .joker{
+        width: 80px;
+    }
+    .jokerA_box{
+        width: 70%;
+    }
+    .question input{
+        font-size: 20px;
+    }
+    .infoContainer{
+        width: 90%;
+    }
+    .main{
+        padding-top: 100px;
+    }
+    #qc{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translate(-65%);
+    }
+}
+@media screen and (max-width:447px){
+    .container{
+        width: 100%;
+        margin-top: 50px;
+    }
+    .main{
+        margin-left: 30px;
+    }
+    .jokerA_box{
+        width: 90%;
+    }
+    #name_input{
+        font-size: 20px;
+    }
+    .question{
+        font-size: 20px;
+    }
+    .infoContainer{
+        width: 100%;
+        padding: 0;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        margin-top: 70px;
+    }
+    .landing_page div{
+        width: 250px;
+        font-size:30px;
+        height: 60px;
+    }
+    #congrats{
+        width: 90%;
+    }
+}
+
+

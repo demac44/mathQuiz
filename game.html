@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Quiz</title>
+    <script src="https://kit.fontawesome.com/58812d83b9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+    <div class="endGame">
+        <h1 id="congrats"></h1>
+        <a href="game.html">
+            <div id="newGame_btn">NEW GAME</div>
+        </a>
+        <a href="index.html">
+            <div id="mainMenu_btn">MAIN MENU</div>
+        </a>
+    </div>
+    <div class="jokerA_box">
+        <div id="close_joker">X</div>
+        AUDIENCE VOTES:
+        <div>
+            <h3>A:</h3>
+            <div id="load1"></div>
+            <p id="v1"></p>
+        </div>
+        <div>
+            <h3>B:</h3>
+            <div id="load2"></div>
+            <p id="v2"></p>
+        </div>
+        <div>
+            <h3>C:</h3>
+            <div id="load3"></div>
+            <p id="v3"></p>
+        </div>
+        <div>
+            <h3>D:</h3>
+            <div id="load4"></div>
+            <p id="v4"></p>
+        </div>
+    </div>
+    <div class="container">
+        <div class="points">
+            <ul>
+                <li style="background: #1f8541;color: beige;">1000000</li>
+                <li>500000</li>
+                <li>250000</li>
+                <li>125000</li>
+                <li>64000</li>
+                <li style="background: #1f8541;color: beige;">32000</li>
+                <li>16000</li>
+                <li>8000</li>
+                <li>4000</li>
+                <li>2000</li>
+                <li style="background: #1f8541;color: beige;">1000</li>
+                <li>500</li>
+                <li>300</li>
+                <li>200</li>
+                <li style="border-bottom: 1px solid bisque;">100
+                    <div class="point_color"></div>
+                </li>
+            </ul>
+        </div>
+        <div class="main">
+            <p id="qc"></p>
+            <p id="pq"></p>
+            <div class="question_container">
+                <div class="counter">
+                    <h1 id="countdown"></h1>
+                </div>
+                <div class="jokers">
+                    <button class="joker fifty-fifty">50-50</button>
+                    <button class="joker audience">Audience</button>
+                </div>
+                <div class="question">
+                    <h1 class="quest_text"><input id='name_input' type="text" placeholder="Enter your name*"></h1>
+                </div>
+            </div>
+            <div class="answers">
+                <div class="answer answer1">A:
+                    <p id="aa1"></p>
+                </div>
+                <div class=" answer answer2">B:
+                    <p id="aa2"></p>
+                </div>
+                <div class="answer answer3">C:
+                    <p id="aa3"></p>
+                </div>
+                <div class="answer answer4">D:
+                    <p id="aa4"></p>
+                </div>
+            </div>
+            <div id="start">START</div>
+            <div id="quitGame">QUIT GAME</div>
+            <a href="./index.html"><button id="mainMenu">MAIN MENU</button></a>
+        </div>
+    </div>
+
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
